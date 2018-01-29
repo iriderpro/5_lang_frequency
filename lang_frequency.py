@@ -15,7 +15,8 @@ def load_data(filepath):
 
 def get_most_frequent_words(list_words):
     cntr_obj = Counter(list_words)
-    most_frequent_words = cntr_obj.most_common(10)
+    amount_frequent_words = 10
+    most_frequent_words = cntr_obj.most_common(amount_frequent_words)
     return most_frequent_words
 
 

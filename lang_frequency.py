@@ -12,9 +12,9 @@ def load_data(filepath):
 
 def get_most_frequent_words(str_words):
     list_words = re.findall(r'\w+', str_words)
-    Counter_obj = Counter(list_words)
+    counter_obj = Counter(list_words)
     amount_frequent_words = 10
-    most_frequent_words = Counter_obj.most_common(amount_frequent_words)
+    most_frequent_words = counter_obj.most_common(amount_frequent_words)
     return most_frequent_words
 
 

@@ -11,8 +11,8 @@ def load_data(filepath):
 
 
 def get_most_frequent_words(text):
-    list_frequent_words_low = re.findall(r'\w+', text.lower())
-    counter_obj = Counter(list_frequent_words_low)
+    words = re.findall(r'\w+', text.lower())
+    counter_obj = Counter(words)
     amount_frequent_words = 10
     most_frequent_words = counter_obj.most_common(amount_frequent_words)
     return most_frequent_words
@@ -23,5 +23,5 @@ if __name__ == '__main__':
         sys.exit('Не указан входной файл или он не существует')
     frequent_words = get_most_frequent_words(load_data(sys.argv[1]))
     print('Самые частые слова в тексте и их частота')
-    for word in frequent_words:
-        print (word[0], ' : ', word[1])
+    for word, count in frequent_words:
+        print (word, ' : ', count)
